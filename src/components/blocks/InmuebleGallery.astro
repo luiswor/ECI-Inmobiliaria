@@ -1,0 +1,129 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/free-mode';
+import 'swiper/css/thumbs';
+
+import { Image } from 'astro:assets';
+import img1 from '../../media/img/BPS-WEB.JPG';
+import img2 from '../../media/img/BPS-WEB-2.JPG';
+import img3 from '../../media/img/BPS-WEB-3.JPG';
+import img4 from '../../media/img/BPS-WEB-4.JPG';
+import img5 from '../../media/img/BPS-WEB-5.JPG';
+import img6 from '../../media/img/BPS-WEB-6.JPG';
+import img7 from '../../media/img/BPS-WEB-7.JPG';
+import img8 from '../../media/img/BPS-WEB-8.JPG';
+---
+
+<section class="gallery">
+    <div class="container">
+        <div class="swiper gal2">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <Image src={img1} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img2} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img3} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img4} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img5} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img6} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img7} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img8} alt="img"/>
+                </div>
+
+            </div>
+        </div>
+
+        <div thumbsSlider="" class="swiper gal">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <Image src={img1} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img2} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img3} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img4} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img5} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img6} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img7} alt="img"/>
+                </div>
+                <div class="swiper-slide">
+                    <Image src={img8} alt="img"/>
+                </div>
+            </div>
+          </div>
+    </div>
+</section>
+
+<style lang="scss">
+    @import "../../../sass/base/base.scss";
+
+    .slider {
+        width: 100%;
+    }
+
+    .slide {
+        width: 100%;
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+
+        @include sm {
+            flex-direction: column;
+        }
+    }
+
+    .swiper-slide {
+        padding: 10px 4px;
+    }
+
+</style>
+
+<script>
+    import Swiper from 'swiper';
+    import { Navigation, Thumbs, FreeMode } from 'swiper/modules';
+
+    const swiper = new Swiper(".gal", {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+
+    const swiper2 = new Swiper(".gal2", {
+      loop: true,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiper,
+      },
+    });
+</script>

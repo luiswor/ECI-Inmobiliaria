@@ -1,0 +1,100 @@
+---
+import { Image } from 'astro:assets'
+import img from '../../media/img/entrada-2.png'
+---
+<section class="related">
+    <div class="container">
+        <h2 class="related_title title-1">Artículos relacionados</h2>
+
+        <div class="related_content">
+            <a href="/entrada">
+                <article class="post-card">
+                    <div class="post-card_img">
+                        <Image src={img} alt="img"/>
+
+                    </div>
+                    <div class="post-card_data">
+                        <h2 class="post-card_title">The purpose informed</h2>
+                        <p class="post-card_excerpt">
+                            Wireframes can be pencil drawings or sketches on a whiteboard, or they can be produced by means of a broad 
+                        </p>
+                        <p class="post-card_info">
+                            12 June | 1 min read
+                        </p>
+                    </div>
+                </article>
+            </a>
+
+            <a href="/entrada">
+                <article class="post-card">
+                    <div class="post-card_img">
+                        <Image src={img} alt="img"/>
+                    </div>
+                    <div class="post-card_data">
+                        <h2 class="post-card_title">The purpose informed</h2>
+                        <p class="post-card_excerpt">
+                            Wireframes can be pencil drawings or sketches on a whiteboard, or they can be produced by means of a broad 
+                        </p>
+                        <p class="post-card_info">
+                            12 June | 1 min read
+                        </p>
+                    </div>
+                </article>
+            </a>
+
+            <a href="/entrada">
+                <article class="post-card">
+                    <div class="post-card_img">
+                        <Image src={img} alt="img"/>
+                    </div>
+                    <div class="post-card_data">
+                        <h2 class="post-card_title">The purpose informed</h2>
+                        <p class="post-card_excerpt">
+                            Wireframes can be pencil drawings or sketches on a whiteboard, or they can be produced by means of a broad 
+                        </p>
+                        <p class="post-card_info">
+                            12 June | 1 min read
+                        </p>
+                    </div>
+                </article>
+            </a>
+        </div>
+    </div>
+</section>
+<style lang="scss">
+ @import "../../../sass/base/base.scss";
+
+ .related {
+    width: 100%;
+    padding: 4rem 0;
+
+    @include sm {
+        padding: 2rem 0;
+    }
+    @include sm {
+        padding: 0;
+        margin-bottom: 3rem;
+    }
+
+    &_title {
+        font-weight: 700;
+        line-height: 108.023%;
+        padding: 3rem 0;
+    }
+
+    &_content {
+        width: 100%;
+        display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem 3rem;
+
+            @include md {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @include sm {
+                grid-template-columns: 1fr;
+            }
+    }
+ }
+</style>

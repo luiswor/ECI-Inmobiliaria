@@ -1,0 +1,90 @@
+---
+import {oferta} from "../../data/data.js"
+import { Image } from 'astro:assets';
+import img0 from '../../media/img/oferta_0.svg';
+import img1 from '../../media/img/oferta_1.svg';
+import img2 from '../../media/img/oferta_2.svg';
+import img3 from '../../media/img/oferta_3.svg';
+import img4 from '../../media/img/oferta_4.svg';
+import img5 from '../../media/img/oferta_5.svg';
+---
+<section class="oferta flex column middle">
+    <div class="oferta_heading flex column center middle">
+        <h2 class="oferta_title">¿Qué ofrecemos?</h2>
+        <p class="oferta_text">Uno de los motivos por el cual hacemos lo que hacemos es la satisfacción que da.</p>
+    </div>
+
+    <div class="oferta_content">
+        {
+            oferta.map((item, idx) => {
+                return (
+                    <div class="oferta_item">
+                        <img src={`/oferta_${idx}.svg`} alt={item.title}/>
+
+                        <h3 class="oferta_item_title">{item.title}</h3>
+                        <p class="oferta_item_text">{item.text}</p>
+                    </div>
+                )
+            })
+        }
+    </div>
+</section>
+
+<style lang="scss">
+        @import "../../../sass/base/base.scss";
+
+    .oferta {
+        width: 100%;
+        padding: 4rem 0;
+
+        &_heading {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        &_title {
+            font-size: 3.75rem;
+            font-weight: 700;
+            line-height: 108.023%;
+        }
+
+        &_text {
+            font-size: 1.75rem;
+            font-weight: 400;
+            line-height: 2rem;
+        }
+
+        &_content {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+        }
+        &_item {
+            @include sm {
+                text-align:center;
+            }
+            &_title {
+                font-size: 1.75rem;
+                font-weight: 700;
+                line-height: 120%;
+                --color: var(--color-primary-light);
+            }
+
+            &_text {
+                font-size: 1.25rem;
+                font-weight: 400;
+                line-height: 2rem;
+                --color: var(--color-tertiary);
+
+            }
+
+            img {
+                width: auto;
+                max-width: 100%;
+            }
+        }
+    }
+</style>

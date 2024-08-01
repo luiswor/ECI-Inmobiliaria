@@ -1,0 +1,52 @@
+---
+import Button from "../Button.astro";
+import { Image } from 'astro:assets';
+import preBh from '../../media/img/prefooter-bg.png';
+---
+
+<section class="prefooter">
+    <div class="container">
+        <div class="prefooter_content">
+            <p class="prefooter_title title-1">
+                Vende tu inmueble al mejor precio en tiempo récord.
+            </p>
+            <p class="prefooter_text">Vende rápido, vende bien.</p>
+            <Button type="link" content="¡Vende con ECI ahora!" link="#" variant="light"></Button>
+        </div>
+    </div>
+
+    <Image src={preBh} alt="Vendé tu inmueble"/>
+
+</section>
+<style lang="scss">
+    .prefooter {
+        width: 100%;
+        min-height: 100vh;
+        position: relative;
+        isolation: isolate;
+
+        &_content {
+            width: 100%;
+            max-width: 500px;
+            padding: 5rem 0;
+            --color: #fff;
+        }
+
+        &_text {
+            font-size: 1.75rem;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        > img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            filter: brightness(.8);
+        }
+    }
+</style>

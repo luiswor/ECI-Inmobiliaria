@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro'
+import PreFooter from '../components/blocks/PreFooter.astro'
+import Banner from '../components/blocks/Banner.astro'
+import Button from "../components/Button.astro";
+import { Image } from 'astro:assets';
+import heroimg from '../media/img/oficina.png';
+---
+<Layout title="Contacto" pageSlug='contact'>
+    <section class="wrapper first">
+        <div class="container oficinas">
+            <h1 class="oficinas_title title-1">¿Tomamos un café?</h1>
+            <p class="oficinas_text">Nuestras oficinas</p>
+
+            <div class="oficinas_items">
+                    <article class="card">
+                        <div class="card_img">
+                            <Image src={heroimg} alt="img"/>
+
+                        </div>
+                        <div class="card_content">
+                            <p class="card_title">Av. Sant Ildefons 8, local 6</p>
+                            <p>info@ebusa.es</p>
+                            <p>tel: 931 564 980</p>
+                            <Button type="link" link="/oficina" content="Enviar whatsapp" variant="light-out"/>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card_img">
+                            <Image src={heroimg} alt="img"/>
+                        </div>
+                        <div class="card_content">
+                            <p class="card_title">Calle Miranda 41-43, local 4</p>
+                            <p>info@ebusa.es</p>
+                            <p>tel:s 931 389 669</p>
+                            <Button type="link" link="/oficina" content="Enviar whatsapp" variant="light-out"/>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div class="card_img">
+                            <Image src={heroimg} alt="img"/>
+                        </div>
+                        <div class="card_content">
+                            <p class="card_title">Avda. Cornella 113, local 4</p>
+                            <p>info@ebusa.es</p>
+                            <p>tel: 931373749</p>
+                            <Button type="link" link="/oficina" content="Enviar whatsapp" variant="light-out"/>
+                        </div>
+                    </article>
+            </div>
+
+            <Banner 
+            title={'Somos tu mejor opción'} 
+            content={"Experiencia, confianza y resultados. ECI: líderes en soluciones inmobiliarias."} 
+            action={"Más información"}
+            link={"#"} 
+            />
+        </div>
+    </section>
+
+
+    <PreFooter/>
+</Layout>
+<style lang="scss">
+    .oficinas {
+        padding: 4rem 0;
+
+        &_title {
+            width: 100%;
+            text-align: center;
+        }
+
+        &_text {
+            font-size: 1.75rem;
+            font-weight: 400;
+            line-height: 108.023%;
+            text-align: center;
+        }
+
+        &_items {
+            width: 100%;
+            display: grid;
+            grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr));
+            gap: 2rem;
+            padding: 1rem;
+
+
+            .card {
+                border-radius: 0.375rem;
+                border: 1px solid var(--border-1-px-color-3, #DBDEE7);
+                overflow: hidden;
+
+                &_img {
+                    width: 100%;
+                    overflow: hidden;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                &_content {
+                    padding: 2rem 2.5rem;
+                }
+
+                &_title {
+                    font-size: 1.75rem;
+                    font-weight: 700;
+                    line-height: 120%;
+                }
+            }
+        }
+    }
+</style>

@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro'
+import PreFooter from '../components/blocks/PreFooter.astro'
+import Banner from '../components/blocks/Banner.astro'
+import Button from "../components/Button.astro"
+import HomeOferta from "../components/blocks/HomeOferta.astro"
+import { Image } from 'astro:assets';
+import heroimg from '../media/img/oficina.png';
+---
+
+<Layout title="Oficina" pageSlug='oficina'>
+    <section class="hero first">
+        <div class="hero_img">
+            <Image src={heroimg} alt="img"/>
+
+        </div>
+        <div class="hero_content">
+            <h1 class="title-1">Bienvenido a la Oficina ECI en Sant Ildefons</h1>
+            <p class="hero_content_text">
+                Nombre Mercantil: Ebusa Consultores Inmobiliarios SL <br>
+                C.I.F: B67336958 <br>
+                Dirección: Av. Sant Ildefons 8, Local 6 <br>
+                Correo: info@ebusa.es <br>
+                Teléfono: 931 564 980
+            </p>
+        </div>
+    </section>
+    <div class="wrapper">
+        <div class="container">
+            <section class="wait">
+                <h2 class="wait_title">Lo que Puedes Esperar de Nosotros en Sant Ildefons
+                </h2>
+
+                <div class="wait_content">
+                    <img class="content_stars" src="/wait.svg" alt="">
+                    <ul class="list">
+                        <li>
+                            <strong>Asesoramiento integral</strong> <br>
+                            Ofrecemos un enfoque personalizado que abarca desde la valoración inicial hasta el cierre de la transacción.
+                        </li>
+                        <li>
+                            <strong>Rapidez y Eficacia</strong> <br>
+                            Nuestros procesos ágiles garantizan una transacción rápida y sin contratiempos.
+                        </li>
+                        <li>
+                            <strong>
+                                Confianza y seguridad
+                            </strong><br>
+                            Manejamos todas las cuestiones legales para que tu experiencia sea totalmente segura.
+                        </li>
+                        <li>
+                            <strong>Ubicación Estratégica:</strong> <br>
+                                Nos encontramos en el corazón de Sant Ildefons, cerca de ti y de tus necesidades.
+                                
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="map">
+            <h2 class="map_title">Estamos cerca de ti</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11977.777659349953!2d2.0828561!3d41.3644283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a499682cfb476f%3A0x26764b291db86f62!2sSan%20Ildefonso%2C%2008940%20Cornell%C3%A0%20de%20Llobregat%2C%20Barcelona%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2sar!4v1699844402547!5m2!1ses-419!2sar" width="700" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="container">
+
+            <HomeOferta/>
+
+            <Banner 
+                title={'Somos tu mejor opción'} 
+                content={"Experiencia, confianza y resultados. ECI: líderes en soluciones inmobiliarias."} 
+                action={"Más información"}
+                link={"#"} 
+            />
+        </div>
+    </div>
+    <PreFooter/>
+
+</Layout>
+<style lang="scss">
+    @import "../../sass/base/base.scss";
+
+    .hero {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 4rem;
+
+        @include md {
+            grid-template-columns: 1fr;
+        }
+
+        &_img {
+            height: 100%;
+            border-radius: 0 2rem 2rem 0;
+            overflow: hidden;
+
+            @include md {
+                border-radius:2rem;
+                padding: 1rem;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+                @include md {
+                    border-radius:2rem;
+                }
+            }
+        }
+
+        &_content {
+            padding: 4rem 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            > * {
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+
+            &_text {
+                font-size: 1.25rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 2.125rem;
+                padding: 2rem 0;
+            }
+        }
+    }
+
+    .map {
+        &_title {
+            font-size: 3rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 108.023%;
+            text-align: center;
+        }
+
+        iframe {
+            width: 100%;
+        }
+    }
+    .wait {
+        padding: 3rem 1rem;
+
+        &_title {
+            max-width: 600px;
+            font-size: 3.75rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 108.023%;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        &_text {
+            font-size: 1.75rem;
+            font-weight: 400;
+            line-height: 2.375rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+
+        &_content {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+
+            @include md {
+                flex-direction:column;
+                align-items:center;
+                justify-content: center;
+            }
+        }
+    }
+
+    .list {
+        width: 100%;
+        max-width: 450px;
+        min-width: 300px;
+        list-style: url(../../src/media/img/tilt.svg);
+        padding-left: 2rem;
+
+        li {
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: 2rem;
+            padding: .75rem 0 .75rem .5rem;
+            margin: 0;
+        }
+    }
+</style>

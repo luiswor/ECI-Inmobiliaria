@@ -1,0 +1,270 @@
+---
+import Layout from '../layouts/Layout.astro'
+import PreFooter from '../components/blocks/PreFooter.astro'
+import Banner from '../components/blocks/Banner.astro'
+import Button from "../components/Button.astro"
+import HomeOferta from "../components/blocks/HomeOferta.astro"
+import { Image } from 'astro:assets';
+import heroimg from '../media/img/trabaja-bg.png';
+import talento from '../media/img/talento.png';
+import desafio from '../media/img/desafio.png';
+---
+<Layout title="Trabaja con nosotros" pageSlug='work'>
+    <section class="hero first flex column center">
+        <div class="container">
+            <div class="hero_content">
+
+                <h1 class="hero_title title-1">
+                    Forma parte  <br>
+                    de la familia ECI
+                </h1>
+                <p class="hero_text">Desarrolla tu futuro
+                </p>
+
+                <Button content="Más información" variant="light"/>
+            </div>
+        </div>
+
+        <Image src={heroimg} alt="img"/>
+
+    </section>
+
+    <div class="wrapper">
+        <div class="container">
+            <section class="benefits">
+                <h2 class="benefits_title">Beneficios Exclusivos al Unirte a ECI
+                </h2>
+
+                <div class="benefits_content">
+                    <img class="content_stars" src="/wait.svg" alt="">
+                    <ul class="list">
+                        <li>
+                            <strong>Seguridad y futuro</strong> <br>
+                            Tu estabilidad es nuestra responsabilidad
+                        </li>
+                        <li>
+                            <strong>Crecimiento Profesional</strong> <br>
+                            Acelera tu desarrollo con formación continua
+                        </li>
+                        <li>
+                            <strong>
+                                Oportunidades de Liderazgo
+                            </strong><br>
+                            Tu potencial puede guiar a otros
+                        </li>
+                        <li>
+                            <strong>Innovación y Crecimiento</strong> <br>
+                            Participa en la expansión de un proyecto apasionante.
+                                
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="banner-img">
+                <p class="banner-img_title">Crece en un ambiente de colaboración y respeto</p>
+                <Button type="link" link="#" content="Más información" variant="light" />
+            </section>
+
+            <section class="alter">
+                <div class="row">
+                    <div class="area content">
+                        <p class="pretitle">Puestos disponibles ahora</p>
+                        <p class="title">Suma tu talento</p>
+                        <p class="text">
+                            Nos comprometemos con la excelencia y estamos siempre en la búsqueda de talento que aporte valor y fomente nuestra mejora continua.
+                        </p>
+                    </div>
+
+                    <div class="area">
+                        <Image src={talento} alt="img"/>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="area">
+                        <Image src={desafio} alt="img"/>
+
+                    </div>
+                    <div class="area content">
+                        <p class="pretitle">¿Listo para el Desafío?</p>
+                        <p class="title">Suma tu talento</p>
+                        <p class="text">
+                            Si buscas un ambiente desafiante y gratificante, este es tu lugar.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</Layout>
+<style lang="scss">
+    @import "../../sass/base/base.scss";
+
+    .alter {
+        width: 100%;
+        margin: 10rem 0;
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-bottom: 3rem;
+
+            @include md {
+                grid-template-columns: 1fr;
+            }
+
+            img {
+                border-radius: 2rem;
+            }
+        }
+
+        .content {
+            padding: 3rem 1rem;
+
+            > * {
+                max-width: 500px;
+            }
+        }
+
+        .pretitle {
+            font-size: 1.75rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 2rem;
+        }
+
+        .title {
+            font-size: 3.75rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 108.023%;
+        }
+
+        &_text {
+            font-size: 1.25rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 2rem;
+        }
+    }
+
+    .banner-img {
+        border-radius: 1rem;
+        background-image: url(../public/benefit.png), 
+        linear-gradient(0deg, #252D6C 9.09%, rgba(37, 45, 108, 0.00) 140.45%);
+        background-blend-mode: multiply;
+        padding: 4rem 1rem;
+        margin: 3rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 40vh;
+
+        &_title {
+            width: 100%;
+            max-width: 500px;
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 108.023%;
+            --color: #fff;
+            text-align: center;
+        }
+    }
+
+    .hero {
+        width: 100%;
+        min-height: 90vh;
+        position: relative;
+        isolation: isolate;
+        --color: #fff;
+
+        &_content {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        > img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+
+        &_title {
+            font-size: 3.75rem;
+            font-weight: 700;
+            line-height: 108.023%;
+        }
+
+        &_text {
+            font-size: 1.75rem;
+            font-weight: 400;
+            line-height: 108.023%;
+            margin-bottom: 4rem;
+        }
+    }
+
+    .benefits {
+            padding: 3rem 1rem;
+
+            &_title {
+                max-width: 700px;
+                font-size: 3.75rem;
+                font-style: normal;
+                font-weight: 700;
+                line-height: 108.023%;
+                text-align: center;
+                margin: 0 auto;
+            }
+
+            &_text {
+                font-size: 1.75rem;
+                font-weight: 400;
+                line-height: 2.375rem;
+                text-align: center;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+
+            &_content {
+                width: 100%;
+                max-width: 900px;
+                margin: 0 auto;
+                padding: 3rem 0 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2rem;
+                justify-content: space-between;
+
+                @include md {
+                    flex-direction:column;
+                    align-items:center;
+                    justify-content: center;
+                }
+            }
+    }
+
+    .list {
+        width: 100%;
+        max-width: 450px;
+        min-width: 300px;
+        list-style: url(../../src/media/img/tilt.svg);
+        padding-left: 2rem;
+
+        li {
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: 2rem;
+            padding: .75rem 0 .75rem .5rem;
+            margin: 0;
+        }
+    }
+</style>

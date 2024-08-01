@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro'
+import PreFooter from '../components/blocks/PreFooter.astro'
+import Filtros from '../components/blocks/Filtros.astro'
+import InmuebleCard from '../components/blocks/InmuebleCard.astro'
+---
+
+<Layout title="Inmuebles" pageSlug='inmuebles'>
+    <div class="wrapper first">
+        <Filtros />
+
+        <div class="inmuebles_container">
+            <InmuebleCard />
+            <InmuebleCard />
+            <InmuebleCard />
+            <InmuebleCard />
+            <InmuebleCard />
+            <InmuebleCard />
+            <InmuebleCard />
+            <InmuebleCard />
+        </div>
+    </div>
+    <PreFooter/>
+</Layout>
+
+<style lang="scss">
+    @import "../../sass/base/base.scss";
+
+    .wrapper {
+        width: 100%;
+        padding-bottom: 5rem;
+    }
+
+    .inmuebles_container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+        padding: 2rem 4rem;
+        gap: 1.4rem .8rem;
+
+        @include md {
+            padding: 2rem 2rem;
+        }
+    }
+</style>

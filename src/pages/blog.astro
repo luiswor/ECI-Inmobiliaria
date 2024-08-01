@@ -1,0 +1,185 @@
+---
+import Layout from '../layouts/Layout.astro'
+import PreFooter from '../components/blocks/PreFooter.astro'
+import { Image } from 'astro:assets';
+import heroimg from '../media/img/blog-hero-bg.png';
+---
+<Layout title="Blog" pageSlug='blog'>
+    <section class="hero first flex center middle">
+        <div class="container">
+            <div class="hero_content">
+                <h1 class="hero_title title-1">Nuestro Blog</h1>
+                <p class="hero_text">Encuentra información muy valiosa del sector inmobiliario</p>
+            </div>
+        </div>
+        <Image src={heroimg} alt="img"/>
+
+    </section>
+    <section class="posts">
+        <div class="container posts_grid">
+            <a href="/entrada">
+                <article class="post-card">
+                    <div class="post-card_img">
+                        <img src="/entrada-1.png" alt="">
+                    </div>
+                    <div class="post-card_data">
+                        <h2 class="post-card_title">The purpose informed</h2>
+                        <p class="post-card_excerpt">
+                            Wireframes can be pencil drawings or sketches on a whiteboard, or they can be produced by means of a broad 
+                        </p>
+                        <p class="post-card_info">
+                            12 June | 1 min read
+                        </p>
+                    </div>
+                </article>
+            </a>
+
+            <a href="/entrada">
+                <article class="post-card">
+                    <div class="post-card_img">
+                        <img src="/entrada-2.png" alt="">
+                    </div>
+                    <div class="post-card_data">
+                        <h2 class="post-card_title">The purpose informed</h2>
+                        <p class="post-card_excerpt">
+                            Wireframes can be pencil drawings or sketches on a whiteboard, or they can be produced by means of a broad 
+                        </p>
+                        <p class="post-card_info">
+                            12 June | 1 min read
+                        </p>
+                    </div>
+                </article>
+            </a>
+
+            <a href="/entrada">
+                <article class="post-card">
+                    <div class="post-card_img">
+                        <img src="/entrada-3.png" alt="">
+                    </div>
+                    <div class="post-card_data">
+                        <h2 class="post-card_title">The purpose informed</h2>
+                        <p class="post-card_excerpt">
+                            Wireframes can be pencil drawings or sketches on a whiteboard, or they can be produced by means of a broad 
+                        </p>
+                        <p class="post-card_info">
+                            12 June | 1 min read
+                        </p>
+                    </div>
+                </article>
+            </a>
+
+            <a href="/entrada">
+                <article class="post-card">
+                    <div class="post-card_img">
+                        <img src="/entrada-4.png" alt="">
+                    </div>
+                    <div class="post-card_data">
+                        <h2 class="post-card_title">The purpose informed</h2>
+                        <p class="post-card_excerpt">
+                            Wireframes can be pencil drawings or sketches on a whiteboard, or they can be produced by means of a broad 
+                        </p>
+                        <p class="post-card_info">
+                            12 June | 1 min read
+                        </p>
+                    </div>
+                </article>
+            </a>
+
+            <a href="/entrada">
+                <article class="post-card">
+                    <div class="post-card_img">
+                        <img src="/entrada-2.png" alt="">
+                    </div>
+                    <div class="post-card_data">
+                        <h2 class="post-card_title">The purpose informed</h2>
+                        <p class="post-card_excerpt">
+                            Wireframes can be pencil drawings or sketches on a whiteboard, or they can be produced by means of a broad 
+                        </p>
+                        <p class="post-card_info">
+                            12 June | 1 min read
+                        </p>
+                    </div>
+                </article>
+            </a>
+        </div>
+    </section>
+    <PreFooter/>
+
+</Layout>
+
+<style lang="scss">
+    @import "../../sass/base/base.scss";
+
+    .hero {
+        width: 100%;
+        min-height: 40vh;
+        position: relative;
+        isolation: isolate;
+
+        > img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: auto;
+            max-width: 50%;
+            height: 100%;
+            object-fit: contain;
+            z-index: -1;
+            margin-top: var(--padding-header);
+
+            @include md {
+                display: none;
+            }
+        }
+
+        .container {
+            height: 100%;
+        }
+
+        &_content {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        &_text {
+            font-size: 1.75rem;
+            font-weight: 400;
+            line-height: 108.023%;
+        }
+    }
+
+    .posts {
+        width: 100%;
+        padding: 8rem 0;
+
+        &_grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem 3rem;
+
+            @include md {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @include sm {
+                grid-template-columns: 1fr;
+            }
+
+            > *:nth-child(1) {
+                grid-column: span 2;
+
+                @include sm {
+                   grid-column:span 1;
+                }
+            }
+        }
+    }
+
+    .post-card {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+</style>

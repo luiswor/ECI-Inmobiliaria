@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import filoImg from '../../media/img/filo_img.png';
+---
+
+<section class="filo">
+    <div class="filo_content">
+        <h2 class="filo_title">Nuestra filosofía</h2>
+        <p class="filo_text">
+            En ECI, nuestra pasión va más allá de simples transacciones. Conectamos personas con lugares, creando historias y hogares. Tu satisfacción es nuestra prioridad.
+        </p>
+    </div>
+    <div class="filo_img">
+        <Image src={filoImg} alt="Nuestra filosofía"/>
+
+    </div>
+</section>
+
+<style lang="scss">
+    .filo {
+        width: 100%;
+        min-height: 80vh;
+        padding: 3rem 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        place-content: center;
+        gap: 3rem;
+        //background-color: #fff;
+        --color: var(--color-secondary);
+
+        &_title {
+            font-size: 2.875rem;
+            font-weight: 400;
+            line-height: 2.125rem;
+        }
+
+        &_text {
+            font-size: 1.75rem;
+            font-weight: 300;
+            line-height: 2rem;
+        }
+    }
+</style>

@@ -1,0 +1,119 @@
+---
+import Button from '../../components/Button.astro'
+import { Image } from 'astro:assets';
+import heroBG from '../../media/img/home-hero-bg.png';
+---
+<section class="hero flex center middle">
+    <div class="container first">
+      <div class="hero_content">
+        <h1 class="title-1">Tu futuro inmobiliario <br> empieza aquí</h1>
+        <p class="text-hero">
+          Transformamos sueños en <br> direcciones concretas. <br>
+          Expertos en encontrar <br> tu hogar perfecto.
+        </p>
+
+        <Button type={'button'} content={'¡Conoce nuestras propiedades!'} />
+      </div>
+    </div>
+    <Image src={heroBG} alt="Hero background"/>
+
+    <div class="delta md:none">
+      <svg width="1776" height="1117" viewBox="0 0 1776 1117" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1627.96 464.676H1510.51L1041.03 3.17216C1037.94 0.0659212 1033.96 0.065918 1033.96 0.065918H1149.86C1153.48 0.065918 1156.96 1.53923 1159.52 4.16665L1627.94 464.676H1627.96Z" fill="url(#paint0_linear_642_2927)"/>
+        <path d="M548.088 465.401L1031.49 2.22683C1035.25 -1.55468 1037.94 -0.142754 1041.69 3.63876L1106.32 67.1632L687.795 465.401H548.088Z" fill="url(#paint1_linear_642_2927)"/>
+        <path d="M1775.62 604.604L1411.22 251.475C1389.07 270.481 1458.84 373.478 1437.47 392.864L1775.62 730V604.592V604.604Z" fill="url(#paint2_linear_642_2927)"/>
+        <path d="M1.59129e-05 983.733V1116.59L731.595 423.374C720.473 386.787 803.701 261.653 799.755 224.268L1.59129e-05 983.733Z" fill="url(#paint3_linear_642_2927)"/>
+        <defs>
+        <linearGradient id="paint0_linear_642_2927" x1="1033.96" y1="232.371" x2="1627.96" y2="232.371" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#293A7C"/>
+        <stop offset="0.41" stop-color="#252D6C"/>
+        <stop offset="1" stop-color="#221F5A"/>
+        </linearGradient>
+        <linearGradient id="paint1_linear_642_2927" x1="548.088" y1="232.69" x2="1106.32" y2="232.69" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#293A7C"/>
+        <stop offset="0.41" stop-color="#252D6C"/>
+        <stop offset="1" stop-color="#221F5A"/>
+        </linearGradient>
+        <linearGradient id="paint2_linear_642_2927" x1="1406.81" y1="428.04" x2="1775.62" y2="428.04" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#221F5A"/>
+        <stop offset="0.59" stop-color="#252D6C"/>
+        <stop offset="1" stop-color="#293A7C"/>
+        </linearGradient>
+        <linearGradient id="paint3_linear_642_2927" x1="409.25" y1="411.293" x2="799.898" y2="411.293" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#293A7C"/>
+        <stop offset="0.36" stop-color="#273373"/>
+        <stop offset="0.94" stop-color="#22215C"/>
+        <stop offset="1" stop-color="#221F5A"/>
+        </linearGradient>
+        </defs>
+      </svg>         
+    </div>      
+</section>
+
+<style lang="scss">
+  @import "../../../sass/base/base.scss";
+
+  .hero {
+    width: 100%;
+    height: auto;
+    position: relative;
+    isolation: isolate;
+    --color: #fff;
+    min-height: 90vh;
+
+    @include md {
+      min-height: 60vh;
+    }
+
+    + * {
+      position: relative;
+      z-index: 100;
+    }
+
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 10;
+      margin-bottom: 4rem;
+    }
+
+    > img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    > .delta {
+      width: 100%;
+      height: auto;
+      margin-top: var(--header-height, 7rem);
+      position: absolute;
+      top: 3rem;
+      left: 0;
+      z-index: 1;
+      overflow: hidden;
+      pointer-events: none;
+
+      > svg {
+        width: 120%;
+        height: auto;
+      }
+    }
+  }
+</style>
+
+<script is:inline>
+  //PARALAX STICKERS
+  let delta = document.querySelector('.delta');
+
+  window.addEventListener('scroll', function(){
+    let value = window.scrollY;
+    delta.style.transform = 'translateY(' + value * -0.25 + 'px)';
+  })
+</script>

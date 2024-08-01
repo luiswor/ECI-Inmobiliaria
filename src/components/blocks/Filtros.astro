@@ -1,0 +1,79 @@
+---
+
+---
+<div class="first filter">
+    <div class="wrapper flex center">
+        <form class="container">
+            <fieldset>
+
+                <input type="text" placeholder="Localidad">
+                <input type="text" placeholder="Barrio">
+                <input type="text" placeholder="Precio">
+                <input type="text" placeholder="Habitaciones">
+                <input type="text" placeholder="Superficie">
+            </fieldset>
+            <fieldset class="between">
+                <button class="first">Borrar Filtros</button>
+                <button class="second">Buscar</button>
+            </fieldset>
+
+        </form>
+    </div>
+</div>
+
+<style lang="scss">
+        @import "../../../sass/base/base.scss";
+
+        .wrapper {
+            width: 100%;
+            padding: 2rem 4rem;
+
+            @include md {
+                padding: 1rem;
+            }
+        }
+    form {
+        width: 100%;
+        
+        fieldset {
+            border: none;
+            display: flex;
+            gap: 1rem;
+
+            @include md {
+                flex-wrap: wrap;
+            }
+
+        }
+
+        input {
+            flex: 1 1 auto;
+            border-radius: 0.4375rem;
+            border: 0.5px solid #C8C8C8;
+            background: #FFF;
+            padding: .75rem 1.5rem;
+            font-size: 1rem;
+            margin:  0;
+        }
+        button {
+            width: max-content;
+            height: max-content;
+            border-radius: 0.3125rem;
+            font-size: 0.9375rem;
+            font-weight: 700;
+            line-height: normal;
+            padding: .75rem 1.5rem;
+
+            &.first {
+                background-color: #FFF;
+                color: #293A7C;
+                border: solid 1px #293A7C;
+            }
+
+            &.second {
+                background: #293A7C;
+                color: #FFF;
+            }
+        }
+    }
+</style>

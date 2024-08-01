@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro'
+import HomeHero from '../components/blocks/HomeHero.astro'
+import Banner from '../components/blocks/Banner.astro'
+import HomeFilosofia from '../components/blocks/HomeFilosofia.astro'
+import HomeOferta from '../components/blocks/HomeOferta.astro'
+import Reviews from '../components/blocks/Reviews.astro'
+import PreFooter from '../components/blocks/PreFooter.astro'
+import InmuebleDestacados from '../components/blocks/InmuebleDestacados.astro'
+---
+
+<Layout title="Inicio" pageSlug='home'>
+    <HomeHero/>
+    
+    <div class="wrapper">
+      <div class="container ">
+        <Banner 
+          title={'Valoración gratuita'} 
+          content={"Descubre el valor real de tu inmueble, sin costes."} 
+          variant={"light"}
+          action={"¡Obtén tu valoración ahora!"}
+          link={"#"} 
+        />
+
+
+        <HomeFilosofia/>
+      </div>
+      <InmuebleDestacados/>
+      <div class="container">
+        <HomeOferta/>
+
+        <Banner 
+        title={'Somos tu mejor opción'} 
+        content={"Experiencia, confianza y resultados. ECI: líderes en soluciones inmobiliarias."} 
+        action={"Más información"}
+        link={"#"} 
+        />
+
+        <Reviews/>
+
+      </div>
+      
+    </div>
+    <PreFooter/>
+</Layout>
+
+<style lang="scss">
+  /*  */
+  .wrapper {
+    width: 100%;
+  
+    .container {
+      position: relative;
+      z-index: 100;
+    }
+  }
+</style>
+

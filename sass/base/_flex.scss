@@ -1,0 +1,50 @@
+@import "../base/variables";
+@import "../base/mixins";
+
+.wfull {
+    width: 100%;
+}
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.between {
+    justify-content: space-between;
+}
+.center {
+    justify-content: center;
+}
+
+.middle {
+    align-items: center;
+}
+
+@include md {
+    .md\:none {
+        display: none;
+    }
+    .md\:flex {
+        display: flex;
+    }
+
+    .md\:column {
+        flex-direction: column;
+    }
+}
+
+@include sm {
+    .sm\:none {
+        display: none;
+    }
+    .sm\:flex {
+        display: flex;
+    }
+
+    .sm\:column {
+        flex-direction: column;
+    }
+}
